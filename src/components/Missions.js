@@ -1,16 +1,12 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import fetchMissions from '../helpers/fetchMissions';
 import { getMissions } from '../redux/missions/missions';
+import store from '../redux/storeConfig';
 
 const Missions = () => {
-  const dispatch = useDispatch()
-
   useEffect(async () => {
-    dispatch(getMissions(await fetchMissions()))
+    store.dispatch(getMissions(await fetchMissions()))
   }, [])
-
-  const data = useSelector((state) => state.missions)
 
   return (
     <div>Missions

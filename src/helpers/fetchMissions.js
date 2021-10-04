@@ -1,6 +1,17 @@
 const fetchMissions = async () => {
-  const response = await fetch('https://api.spacexdata.com/v3/missions')
-  return response.json()
+  const missions = []
+  await fetch('https://api.spacexdata.com/v3/missions')
+   .then((response) => response.json())
+   .then((data) => {
+    const obj = {}
+    for (let item of data) {
+      obj.mission_id = item.mission_id
+      obj.mission_name = item.mission_name
+      obj.description = item.description
+      missions.push(obj)
+    }
+  })
+  return missions
 }
 
 export default fetchMissions;
