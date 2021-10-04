@@ -1,9 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const OneMission = () => {
+const OneMission = (props) => {
+  const { name } = props;
+
   return (
-    <div>Hahaha</div>
+    <p>{name}</p>
   );
-}
- 
+};
+
+OneMission.propTypes = {
+  name: PropTypes.string.isRequired,
+};
+
 export default OneMission;

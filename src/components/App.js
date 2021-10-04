@@ -9,12 +9,15 @@ import '../style/App.css';
 import Navbar from './Navbar';
 import Missions from './Missions';
 import store from '../redux/storeConfig';
+import { getMissions } from '../redux/missions/missions';
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadRocketsThunk());
   }, [dispatch]);
+
+  store.dispatch(getMissions());
   return (
     <Provider store={store}>
       <Navbar />

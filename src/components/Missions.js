@@ -1,15 +1,18 @@
-import React, { useEffect } from 'react';
-import fetchMissions from '../helpers/fetchMissions';
-import { getMissions } from '../redux/missions/missions';
-import store from '../redux/storeConfig';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import OneMission from './OneMission';
 
 const Missions = () => {
-  useEffect(async () => {
-    store.dispatch(getMissions(await fetchMissions()));
-  }, []);
+  const missions = useSelector((state) => state.missions.missions);
 
   return (
-    <div>Missions</div>
+    <ul>
+      {missions && missions.map((mission) => (
+        <li key={mission.mission_id}>
+          <OneMission name={mission.mission_name} />
+        </li>
+      ))}
+    </ul>
   );
 };
 
