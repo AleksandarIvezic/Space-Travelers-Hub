@@ -18,7 +18,7 @@ function App() {
   }, [dispatch]);
 
   useEffect(() => {
-    store.dispatch(getMissions())
+    store.dispatch(getMissions());
   }, []);
   return (
     <Provider store={store}>

@@ -5,9 +5,11 @@ const GET_MISSIONS = 'missionStore/missions/GET_MISSIONS';
 const initialState = [];
 
 export const getMissions = () => async (dispatch) => {
-  const missions = await fetchMissions()
-  dispatch({type: GET_MISSIONS, missions,})
-}
+  const missions = await fetchMissions();
+  dispatch({
+    type: GET_MISSIONS, missions,
+  });
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
