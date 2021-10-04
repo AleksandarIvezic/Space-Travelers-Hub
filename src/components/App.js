@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { Provider, useDispatch } from 'react-redux';
 import MyProfile from './MyProfile';
 import Rockets from './Rockets';
+import { loadRocketsThunk } from '../redux/rockets/rockets';
 
 import '../style/App.css';
 import Navbar from './Navbar';
@@ -10,6 +11,10 @@ import Missions from './Missions';
 import store from '../redux/storeConfig';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadRocketsThunk());
+  }, [dispatch]);
   return (
     <Provider store={store}>
       <Navbar />
