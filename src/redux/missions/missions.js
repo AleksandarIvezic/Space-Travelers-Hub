@@ -1,7 +1,7 @@
 import fetchMissions from '../../helpers/fetchMissions';
 
-const GET_MISSIONS = 'missionStore/missions/GET_MISSIONS';
-const JOIN_MISSION = 'missionStore/missions/JOIN_MISSION';
+const GET_MISSIONS = 'space-travelers-hub/missions/GET_MISSIONS';
+const JOIN_MISSION = 'space-travelers-hub/missions/JOIN_MISSION';
 
 const initialState = [];
 
@@ -25,8 +25,8 @@ const reducer = (state = initialState, action) => {
       };
     case JOIN_MISSION:
       return state.missions.map((mission) => {
-        if (mission.mission_id === action.id) {
-          return mission
+        if (mission.mission_id !== action.id) {
+          return { ...mission }
         }
         return { ...mission, reserved: true }
       })
