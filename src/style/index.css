@@ -8,3 +8,7 @@ body {
 code {
   font-family: 'Courier New', monospace;
 }
+
+a {
+  text-decoration: none;
+}
