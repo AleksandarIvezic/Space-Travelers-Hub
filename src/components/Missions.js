@@ -5,12 +5,11 @@ import store from '../redux/storeConfig';
 
 const Missions = () => {
   useEffect(async () => {
-    store.dispatch(getMissions(await fetchMissions()))
-  }, [])
+    store.dispatch(getMissions(await fetchMissions()));
+  }, []);
 
   return (
-    <div>Missions
-    </div>
+    <div>Missions</div>
   );
 };
 

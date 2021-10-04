@@ -1,11 +1,10 @@
-/* some comment */
 const GET_MISSIONS = 'missionStore/missions/GET_MISSIONS';
 
 const initialState = [];
 
 export const getMissions = (payload) => ({
-  type: GET_MISSIONS, payload
-})
+  type: GET_MISSIONS, payload,
+});
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -13,10 +12,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         missions: action.payload,
-      }
+      };
+
     default:
-      return state;    
+      return state;
   }
-}
+};
 
 export default reducer;
