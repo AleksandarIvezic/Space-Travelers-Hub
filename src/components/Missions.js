@@ -7,22 +7,22 @@ const Missions = () => {
 
   return (
     <ul>
-      <div className="container table-responsive-sm">
-        <table class="table table-striped table-bordered">
+      <div className="container">
+        <table className="table table-striped table-bordered">
           <thead>
             <tr>
               <th scope="col">Mission</th>
               <th scope="col">Description</th>
               <th scope="col">Status</th>
-              <th scope="col" />
+              <th scope="col" aria-label="empty" />
             </tr>
           </thead>
           <tbody>
-          {missions && missions.map((mission) => (
-            <tr key={mission.mission_id}>
-              <OneMission name={mission.mission_name} description={mission.description} />
-            </tr>
-          ))}
+            {missions && missions.map((mission) => (
+              <tr key={mission.mission_id}>
+                <OneMission name={mission.mission_name} description={mission.description} />
+              </tr>
+            ))}
           </tbody>
         </table>
         {/* {missions && missions.map((mission) => (
