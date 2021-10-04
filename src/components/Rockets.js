@@ -1,9 +1,20 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-const Rockets = () => (
-  <div>
-    <h3>Rockets</h3>
-  </div>
-);
+import Rocket from './Rocket';
+
+const Rockets = () => {
+  const rockets = useSelector((state) => state.rocketsReducer.rockets);
+
+  return (
+    <div>
+      <ul>
+        {rockets && rockets.map((rocket) => (
+          <Rocket key={rocket.id} name={rocket.name} />
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default Rockets;
