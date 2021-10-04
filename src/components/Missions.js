@@ -9,7 +9,7 @@ const Missions = () => {
     <ul>
       {missions && missions.map((mission) => (
         <li key={mission.mission_id}>
-          <OneMission mission={mission} />
+          <OneMission name={mission.mission_name} />
         </li>
       ))}
     </ul>

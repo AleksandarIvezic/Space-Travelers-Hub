@@ -7,7 +7,6 @@ const initialState = [];
 export const getMissions = () => async (dispatch) => {
   const missions = await fetchMissions()
   dispatch({type: GET_MISSIONS, missions,})
-  // type: GET_MISSIONS, payload,
 }
 
 const reducer = (state = initialState, action) => {

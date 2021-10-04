@@ -1,9 +1,9 @@
 import React from 'react';
 
 const OneMission = (props) => {
-  console.log(props)
+  const { name } = props
   return (
-    <p>Hahaha</p>
+    <p>{name}</p>
   );
 }
  
