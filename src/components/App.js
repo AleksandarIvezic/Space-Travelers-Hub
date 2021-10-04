@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import MyProfile from './MyProfile';
 import Rockets from './Rockets';
+import { loadRocketsThunk } from '../redux/rockets/rockets';
 
 import '../style/App.css';
 import Navbar from './Navbar';
 import Missions from './Missions';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadRocketsThunk());
+  }, [dispatch]);
   return (
     <>
       <Navbar />
