@@ -15,10 +15,10 @@ const rocketsReducer = (state = initialState, action) => {
       return {
         ...state,
         rockets: state.rockets.map((rocket) => (
-          rocket.id === action.payload.id ? {
-            ...state.rockets, reserved: true,
+          (rocket.id === action.payload) ? {
+            ...rocket, reserved: true,
           } : {
-            ...state.rockets,
+            ...rocket,
           }
         )),
       };

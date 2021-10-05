@@ -4,7 +4,6 @@ import Rocket from './Rocket';
 
 const Rockets = () => {
   const rockets = useSelector((state) => state.rocketsReducer.rockets);
-
   return (
     <div>
       <ul>
@@ -15,6 +14,7 @@ const Rockets = () => {
               name={rocket.name}
               image={rocket.flickr_images[0]}
               description={rocket.description}
+              id={rocket.id}
             />
           ))}
       </ul>
