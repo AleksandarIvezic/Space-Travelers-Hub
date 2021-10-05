@@ -8,10 +8,10 @@ const MyProfile = () => {
     reservedRockets = rockets.filter((rocket) => rocket.reserved);
   }
 
-  const missions = useSelector((state) => state.missions.missions)
+  const missions = useSelector((state) => state.missions.missions);
   let reservedMissions;
   if (missions) {
-    reservedMissions = missions.filter((mission) => mission.reserved)
+    reservedMissions = missions.filter((mission) => mission.reserved);
   }
 
   return (
