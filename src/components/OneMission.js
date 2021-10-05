@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { joinMission } from '../redux/missions/missions';
+import { joinMission, leaveMission } from '../redux/missions/missions';
 import store from '../redux/storeConfig';
 import '../style/OneMission.css';
 
@@ -12,7 +12,7 @@ const OneMission = (props) => {
   };
 
   const handleLeave = (e) => {
-    console.log(e.target.id)
+    store.dispatch(leaveMission(e.target.id))
   }
 
   return (
