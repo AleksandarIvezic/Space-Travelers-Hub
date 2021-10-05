@@ -22,6 +22,7 @@ const Missions = () => {
             {missions && missions.map((mission) => (
               <tr key={mission.mission_id}>
                 <OneMission
+                  reserved={mission.reserved}
                   id={mission.mission_id}
                   name={mission.mission_name}
                   description={mission.description}
