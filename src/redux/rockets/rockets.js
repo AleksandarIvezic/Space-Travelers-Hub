@@ -2,6 +2,7 @@ import getRockets from '../../helpers/getRockets';
 
 const LOAD = 'space-travelers-hub/rockets/LOAD';
 const RESERVE = 'space-travelers-hub/rockets/RESERVE';
+const UNRESERVE = 'space-travelers-hub/rockets/UNRESERVE';
 const initialState = [];
 
 const rocketsReducer = (state = initialState, action) => {
@@ -17,6 +18,17 @@ const rocketsReducer = (state = initialState, action) => {
         rockets: state.rockets.map((rocket) => (
           (rocket.id === action.payload) ? {
             ...rocket, reserved: true,
+          } : {
+            ...rocket,
+          }
+        )),
+      };
+    case UNRESERVE:
+      return {
+        ...state,
+        rockets: state.rockets.map((rocket) => (
+          (rocket.id === action.payload) ? {
+            ...rocket, reserved: false,
           } : {
             ...rocket,
           }
@@ -46,6 +58,13 @@ const reserveRocket = (payload) => (
   }
 );
 
+const unreserveRocket = (payload) => (
+  {
+    type: UNRESERVE,
+    payload,
+  }
+);
+
 export {
-  rocketsReducer, loadRocketsThunk, reserveRocket,
+  rocketsReducer, loadRocketsThunk, reserveRocket, unreserveRocket,
 };
