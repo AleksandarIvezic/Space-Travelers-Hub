@@ -1,4 +1,6 @@
-.active-link {
-  color: red;
-  text-decoration: underline;
+.line {
+  content: '';
+  height: 1.1rem;
+  line-height: 1rem;
+  border: 1px solid black;
 }

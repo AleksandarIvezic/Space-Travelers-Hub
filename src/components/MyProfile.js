@@ -9,9 +9,7 @@ const MyProfile = () => {
   }
   return (
     <div className="d-flex">
-      <ul className="my-missions w-50">
-        <li>something</li>
-      </ul>
+      <ul className="my-missions w-50" />
       <div className="my-rockets w-50">
         <h4>My Rockets</h4>
         {reservedRockets && (
