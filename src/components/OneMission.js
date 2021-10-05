@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { joinMission } from '../redux/missions/missions';
+import { joinMission, leaveMission } from '../redux/missions/missions';
 import store from '../redux/storeConfig';
 
 const OneMission = (props) => {
@@ -10,22 +10,27 @@ const OneMission = (props) => {
     store.dispatch(joinMission(e.target.id));
   };
 
+  const handleLeave = (e) => {
+    store.dispatch(leaveMission(e.target.id));
+  };
+
   return (
     <>
       <th scope="row">{name}</th>
-      <td>{description}</td>
+      <td><div className="descri">{description}</div></td>
       <td>
         <span className="badge bg-secondary">NOT A MEMBER</span>
       </td>
       <td className="text-center">
         <button
           type="button"
-          className="btn btn-sm btn-outline-secondary"
+          className="btn btn-sm btn-outline-secondary mission-btn"
           onClick={handleJoin}
           id={id}
         >
-          JoinMission
+          Join Mission
         </button>
+        <button type="button" className="btn btn-sm btn-outline-danger mission-btn" onClick={handleLeave} id={id}>Leave Mission</button>
       </td>
     </>
   );

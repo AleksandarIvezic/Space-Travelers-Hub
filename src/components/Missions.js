@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import OneMission from './OneMission';
+import '../style/Mission.css';
 
 const Missions = () => {
   const missions = useSelector((state) => state.missions.missions);
@@ -14,7 +15,7 @@ const Missions = () => {
               <th scope="col">Mission</th>
               <th scope="col">Description</th>
               <th scope="col">Status</th>
-              <th scope="col" aria-label="empty" />
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
