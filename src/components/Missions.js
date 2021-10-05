@@ -7,7 +7,7 @@ const Missions = () => {
   const missions = useSelector((state) => state.missions.missions);
 
   return (
-    <ul>
+    <ul className="m-0 p-0">
       <div className="container">
         <table className="table table-striped table-bordered">
           <thead>

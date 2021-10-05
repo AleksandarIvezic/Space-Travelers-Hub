@@ -19,7 +19,7 @@ const Rocket = ({
   };
 
   return (
-    <li className="d-flex m-2 p-2">
+    <li className="d-flex flex-wrap flex-lg-nowrap m-2 p-2">
       <div className="image mx-2">
         <img src={image} alt="rocket-img" width="250" height="180" />
       </div>
