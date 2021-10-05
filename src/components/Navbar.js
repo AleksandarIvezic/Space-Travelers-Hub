@@ -22,7 +22,7 @@ const Navbar = () => {
 
   ];
   return (
-    <nav className="d-flex flex-wrap justify-content-between align-items-center mx-4 mt-2">
+    <nav className="d-flex flex-wrap justify-content-between align-items-center mx-4 mt-3">
       <div className="heading d-flex flex-wrap">
         <img src="images/space-logo.png" alt="logo" width="45" height="45" />
         <h1 className="mx-2">Space Travelers&apos; Hub</h1>

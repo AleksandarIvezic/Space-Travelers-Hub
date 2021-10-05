@@ -24,7 +24,7 @@ function App() {
 
   return (
     <Provider store={store}>
-      <div className="container-fluid">
+      <div className="container">
         <Navbar />
         <hr />
         <Switch>

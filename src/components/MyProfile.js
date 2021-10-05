@@ -15,7 +15,7 @@ const MyProfile = () => {
   }
 
   return (
-    <div className="d-flex w-75 mx-auto">
+    <div className="d-flex w-75 mx-auto mt-4">
       <div className="my-missions w-50 me-2">
         <h4>My Missions</h4>
         {reservedMissions && (
