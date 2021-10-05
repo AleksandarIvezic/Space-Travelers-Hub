@@ -18,7 +18,10 @@ function App() {
     dispatch(loadRocketsThunk());
   }, [dispatch]);
 
-  store.dispatch(getMissions());
+  useEffect(() => {
+    store.dispatch(getMissions());
+  }, []);
+
   return (
     <Provider store={store}>
       <div className="container-fluid">
