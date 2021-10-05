@@ -18,7 +18,7 @@ export const joinMission = (payload) => ({ type: JOIN_MISSION, id: payload });
 export const leaveMission = (payload) => ({
   type: LEAVE_MISSION,
   id: payload,
-})
+});
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
