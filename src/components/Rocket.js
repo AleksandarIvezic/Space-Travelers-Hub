@@ -5,11 +5,14 @@ import Button from 'react-bootstrap/Button';
 import { reserveRocket } from '../redux/rockets/rockets';
 
 const Rocket = ({
-  id, name, image, description,
+  id, name, image, description, reserved,
 }) => {
   const dispatch = useDispatch();
-  const handleClick = () => {
+  const toggleReservation = () => (reserved ? 'Cancel Reservation' : 'Reserve Rocket');
+  const handleClick = (e) => {
     dispatch(reserveRocket(id));
+    e.target.innerText = toggleReservation();
+    e.target.className = ' btn-reserved';
   };
 
   return (
@@ -20,7 +23,7 @@ const Rocket = ({
       <div className="text">
         <h3>{name}</h3>
         <p>{description}</p>
-        <Button type="button" className="btn btn-primary" onClick={handleClick}>Reserve rocket</Button>
+        <Button type="button" className="btn btn-primary" onClick={handleClick}>{toggleReservation()}</Button>
       </div>
     </li>
   );
@@ -33,4 +36,9 @@ Rocket.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  reserved: PropTypes.bool,
+};
+
+Rocket.defaultProps = {
+  reserved: false,
 };
