@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
+import { Badge } from 'react-bootstrap';
 import { reserveRocket, unreserveRocket } from '../redux/rockets/rockets';
 
 const Rocket = ({
@@ -9,16 +10,12 @@ const Rocket = ({
 }) => {
   const dispatch = useDispatch();
 
-  const handleClick = (e) => {
-    if (reserved) {
-      dispatch(unreserveRocket(id));
-      e.target.innerText = 'Reserve Rocket';
-      e.target.className = 'btn btn-primary';
-    } else {
-      dispatch(reserveRocket(id));
-      e.target.innerText = 'Cancel Reservation';
-      e.target.className = 'btn-reserved';
-    }
+  const handleReserve = () => {
+    dispatch(reserveRocket(id));
+  };
+
+  const handleUnreserve = () => {
+    dispatch(unreserveRocket(id));
   };
 
   return (
@@ -27,9 +24,17 @@ const Rocket = ({
         <img src={image} alt="rocket-img" width="250" height="180" />
       </div>
       <div className="text">
+        {reserved && (
+          <Badge className="badge bg-info">Reserved</Badge>
+        )}
         <h3>{name}</h3>
         <p>{description}</p>
-        <Button type="button" className="btn btn-primary" onClick={handleClick}>Reserve Rocket</Button>
+        {!reserved && (
+          <Button type="button" onClick={handleReserve}>Reserve Rocket</Button>
+        )}
+        {reserved && (
+          <Button type="button" className="btn btn-light btn-outline-secondary" onClick={handleUnreserve}>Cancel Reservation</Button>
+        )}
       </div>
     </li>
   );
