@@ -21,18 +21,21 @@ function App() {
   store.dispatch(getMissions());
   return (
     <Provider store={store}>
-      <Navbar />
-      <Switch>
-        <Route exact path="/">
-          <Rockets />
-        </Route>
-        <Route path="/missions">
-          <Missions />
-        </Route>
-        <Route path="/my-profile">
-          <MyProfile />
-        </Route>
-      </Switch>
+      <div className="container">
+        <Navbar />
+        <hr />
+        <Switch>
+          <Route exact path="/">
+            <Rockets />
+          </Route>
+          <Route path="/missions">
+            <Missions />
+          </Route>
+          <Route path="/my-profile">
+            <MyProfile />
+          </Route>
+        </Switch>
+      </div>
     </Provider>
   );
 }
