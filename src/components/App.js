@@ -21,7 +21,7 @@ function App() {
   store.dispatch(getMissions());
   return (
     <Provider store={store}>
-      <div className="container">
+      <div className="container-fluid">
         <Navbar />
         <hr />
         <Switch>
