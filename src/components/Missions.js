@@ -20,7 +20,11 @@ const Missions = () => {
           <tbody>
             {missions && missions.map((mission) => (
               <tr key={mission.mission_id}>
-                <OneMission id={mission.mission_id} name={mission.mission_name} description={mission.description} />
+                <OneMission
+                  id={mission.mission_id}
+                  name={mission.mission_name}
+                  description={mission.description}
+                />
               </tr>
             ))}
           </tbody>

@@ -20,8 +20,8 @@ function App() {
 
   useEffect(() => {
     store.dispatch(getMissions());
-  }, [])
-  
+  }, []);
+
   return (
     <Provider store={store}>
       <Navbar />

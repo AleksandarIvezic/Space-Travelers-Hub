@@ -5,11 +5,10 @@ import store from '../redux/storeConfig';
 
 const OneMission = (props) => {
   const { name, description, id } = props;
-  console.log('Props', props)
 
   const handleJoin = (e) => {
-    store.dispatch(joinMission(e.target.id))
-  }
+    store.dispatch(joinMission(e.target.id));
+  };
 
   return (
     <>
@@ -35,6 +34,7 @@ const OneMission = (props) => {
 OneMission.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default OneMission;
