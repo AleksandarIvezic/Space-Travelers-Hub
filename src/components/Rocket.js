@@ -2,17 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
-import { reserveRocket } from '../redux/rockets/rockets';
+import { reserveRocket, unreserveRocket } from '../redux/rockets/rockets';
 
 const Rocket = ({
   id, name, image, description, reserved,
 }) => {
   const dispatch = useDispatch();
-  const toggleReservation = () => (reserved ? 'Cancel Reservation' : 'Reserve Rocket');
+
   const handleClick = (e) => {
-    dispatch(reserveRocket(id));
-    e.target.innerText = toggleReservation();
-    e.target.className = ' btn-reserved';
+    if (reserved) {
+      dispatch(unreserveRocket(id));
+      e.target.innerText = 'Reserve Rocket';
+      e.target.className = 'btn btn-primary';
+    } else {
+      dispatch(reserveRocket(id));
+      e.target.innerText = 'Cancel Reservation';
+      e.target.className = 'btn-reserved';
+    }
   };
 
   return (
@@ -23,7 +29,7 @@ const Rocket = ({
       <div className="text">
         <h3>{name}</h3>
         <p>{description}</p>
-        <Button type="button" className="btn btn-primary" onClick={handleClick}>{toggleReservation()}</Button>
+        <Button type="button" className="btn btn-primary" onClick={handleClick}>Reserve Rocket</Button>
       </div>
     </li>
   );
