@@ -25,6 +25,10 @@ const MyProfile = () => {
             ))}
           </ul>
         )}
+
+        {(!reservedMissions || !reservedMissions[0]) && (
+          <h3 className="text-danger">Apparently you have not joined missions - yet</h3>
+        )}
       </div>
 
       <div className="my-rockets w-50 ms-2">
@@ -44,7 +48,6 @@ const MyProfile = () => {
         {(!reservedRockets || !reservedRockets[0]) && (
           <h4 className="text-danger m-4">No reserved rockets! :(</h4>
         )}
-
       </div>
     </div>
   );
