@@ -20,14 +20,17 @@ const OneMission = (props) => {
       <th scope="row">{name}</th>
       <td><div className="descri">{description}</div></td>
       <td>
-        {reserved
-          ? <span className="badge bg-info">Active Member</span>
-          : <span className="badge bg-secondary">NOT A MEMBER</span>
-        }
+        {reserved && (
+          <span className="badge bg-info">Active Member</span>
+        )}
+
+        {!reserved && (
+          <span className="badge bg-secondary">NOT A MEMBER</span>
+        )}
       </td>
       <td className="text-center">
-        {!reserved
-          ? <button
+        {!reserved && (
+          <button
             type="button"
             className="btn btn-sm btn-outline-secondary mission-btn"
             onClick={handleJoin}
@@ -35,8 +38,11 @@ const OneMission = (props) => {
           >
             Join Mission
           </button>
-          : <button type="button" className="btn btn-sm btn-outline-danger mission-btn" onClick={handleLeave} id={id}>Leave Mission</button>
-        }
+        )}
+
+        {reserved && (
+          <button type="button" className="btn btn-sm btn-outline-danger mission-btn" onClick={handleLeave} id={id}>Leave Mission</button>
+        )}
       </td>
     </>
   );

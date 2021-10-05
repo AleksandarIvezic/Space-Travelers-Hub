@@ -8,7 +8,7 @@ const Missions = () => {
 
   return (
     <ul>
-      <div className="container">
+      <div>
         <table className="table table-striped table-bordered">
           <thead>
             <tr>
