@@ -5,6 +5,7 @@ import store from '../redux/storeConfig';
 
 const OneMission = (props) => {
   const { name, description, id } = props;
+  console.log('Props', props)
 
   const handleJoin = (e) => {
     store.dispatch(joinMission(e.target.id))

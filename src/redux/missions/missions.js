@@ -24,12 +24,15 @@ const reducer = (state = initialState, action) => {
         missions: action.missions,
       };
     case JOIN_MISSION:
-      return state.missions.map((mission) => {
-        if (mission.mission_id !== action.id) {
-          return { ...mission }
-        }
-        return { ...mission, reserved: true }
-      })
+      return {
+        ...state,
+        missions: state.missions.map((mission) => {
+          if (mission.mission_id !== action.id) {
+            return { ...mission }
+          }
+          return { ...mission, reserved: true }
+        })
+      }
     default:
       return state;
   }
