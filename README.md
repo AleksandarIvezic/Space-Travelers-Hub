@@ -77,3 +77,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Twitter: [@Aivezic](https://twitter.com/Aivezic)
 - LinkedIn: [Aleksandar Ivezic](https://www.linkedin.com/in/aleksandar-ivezic/)
 
+Commiting changes
