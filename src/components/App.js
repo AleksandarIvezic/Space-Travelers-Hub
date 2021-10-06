@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Provider, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
 import MyProfile from './MyProfile';
 import Rockets from './Rockets';
@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <Provider store={store}>
+    <>
       <div className="container">
         <Navbar />
         <hr />
@@ -39,7 +39,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-    </Provider>
+    </>
   );
 }
 
