@@ -1,7 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import {
+  render, screen, fireEvent,
+} from '@testing-library/react';
 import OneMission from '../../components/OneMission';
+import store from '../../redux/storeConfig';
 
 describe('OneMission', () => {
   it('renders correctly', () => {
@@ -19,16 +23,19 @@ describe('OneMission', () => {
 
 describe('OneMission', () => {
   test('joins mission', () => {
-    render(<OneMission
-      reserved={false}
-      id="123"
-      name="name"
-      description="desc"
-      />);
+    render(
+      <Provider store={store}>
+        <OneMission
+          reserved={false}
+          id="123"
+          name="name"
+          description="desc"
+        />
+      </Provider>,
+    );
 
-    const joinBtn = screen.getByText('Join Mission');
-    fireEvent.click(joinBtn)
-    screen.debug()
-    expect(screen.getByText('Leave Mission')).not.toBeInTheDocument()
-  })
-})
+    fireEvent.click(screen.getByText('Join Mission'));
+    screen.debug();
+    expect(screen.getByText('Join Mission'));
+  });
+});
