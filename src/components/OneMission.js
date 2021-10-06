@@ -8,12 +8,12 @@ const OneMission = (props) => {
     name, description, id, reserved,
   } = props;
 
-  const handleJoin = (e) => {
-    store.dispatch(joinMission(e.target.id));
+  const handleJoin = () => {
+    store.dispatch(joinMission(id));
   };
 
-  const handleLeave = (e) => {
-    store.dispatch(leaveMission(e.target.id));
+  const handleLeave = () => {
+    store.dispatch(leaveMission(id));
   };
 
   return (
