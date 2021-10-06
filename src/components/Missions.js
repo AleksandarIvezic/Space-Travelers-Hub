@@ -31,11 +31,6 @@ const Missions = () => {
             ))}
           </tbody>
         </table>
-        {/* {missions && missions.map((mission) => (
-          <li key={mission.mission_id}>
-            <OneMission name={mission.mission_name} />
-          </li>
-        ))} */}
       </div>
     </ul>
   );
