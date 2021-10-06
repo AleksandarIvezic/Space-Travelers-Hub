@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if MyProfile renders correctly 1`] = `
+<div
+  className="d-flex w-75 mx-auto mt-4"
+>
+  <div
+    className="my-missions w-50 me-2"
+  >
+    <h4>
+      My Missions
+    </h4>
+    <h3
+      className="text-danger"
+    >
+      Apparently you have not joined missions - yet
+    </h3>
+  </div>
+  <div
+    className="my-rockets w-50 ms-2"
+  >
+    <h4>
+      My Rockets
+    </h4>
+    <h4
+      className="text-danger m-4"
+    >
+      No reserved rockets! :(
+    </h4>
+  </div>
+</div>
+`;
